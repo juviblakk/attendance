@@ -1,27 +1,27 @@
-<?php
-require 'vendor/autoload.php';
-class SendEmail{
+<?php 
+    require 'vendor/autoload.php';
 
-    public static function SendMail($to,$subject,$content){
-        $key = '';
+    class SendEmail{
 
-        $email = new \SendGrid\Mail\Mail();
-        $email->setFrom("jovonitaylor12@gmail.com", "Jovoni Taylor");
-        $email->setSubject($subject);
-        $email->addTo($to);
-        $email->addContent("text/plain", $content);
-        //$email->addContent("text/html", $content);
+        public static function SendMail($to,$subject,$content){
+            $key = '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';
 
-        $sendgrid = new \SendGrid($key);
+            $email = new \SendGrid\Mail\Mail();
+            $email->setFrom("trevoir.williams@gmail.com", "Trevoir Williams");
+            $email->setSubject($subject);
+            $email->addTo($to);
+            $email->addContent("text/plain", $content);
+            //$email->addContent("text/html", $content);
 
-        try{
-            $response = $sendgrid->send($email);
-            return $response;
-        }catch(Exception $e){
-            echo 'Email exception Caught : '. $e->getMessage() ."\n";
-            return false;
+            $sendgrid = new \SendGrid($key);
+
+            try{
+                $response = $sendgrid->send($email);
+                return $response;
+            }catch(Exception $e){
+                echo 'Email exception Caught : '. $e->getMessage() ."\n";
+                return false;
+            }
         }
     }
-}
-
 ?>

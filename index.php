@@ -43,6 +43,14 @@
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="phoneHelp" placeholder="000-000-0000" name="phone">
                 <div id="phoneHelp" class="form-text">We'll never share your number with anyone else.</div>
             </div>
+            <br/>
+            <div class="custom-file">
+                <input type="file" accept="image/*" class="custom-file-input" id="avatar" name="avatar" >
+                <label class="custom-file-label" for="avatar">Choose File</label>
+                <small id="avatar" class="form-text text-danger">File Upload is Optional</small>
+            </div>
+            </br>
+            </br>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
 
