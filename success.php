@@ -21,7 +21,7 @@
             move_uploaded_file($orig_file,$destination);
             
             //Call function to the insert and track if successful or not
-            $issuccess = $crud->insertAttendees($fname,$lname,$dob,$email,$contact,$specialty);
+            $issuccess = $crud->insertAttendees($fname,$lname,$dob,$email,$contact,$specialty,$avatar_path);
             $specialtyName = $crud->getSpecialtiesById($specialty);
 
             if($issuccess){
@@ -48,7 +48,7 @@
     </div> -->
     <!-- This prints out values that were passed to the action page using method="post" -->
     <img src="<?php echo $destination; ?>" class="rounded-circle" style="width: 20%; height: 20%" /> 
-       
+
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title"><?php echo $_POST['firstname']. ' ' .$_POST['lastname']; ?> </h5>
